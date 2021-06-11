@@ -28,7 +28,6 @@ def readDigitFromScreen():
 def scanPeopleNum():
     if(readDigitFromScreen()< 30):
         killzoom()
-        # kill_zoom_process()
     elif readDigitFromScreen() >=30:
         print("아직 인원이 %d명입니다"%readDigitFromScreen())
 
