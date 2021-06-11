@@ -55,15 +55,3 @@ def killzoom():
 
 while True:
     scanPeopleNum()
-
-
-
-
-
-
-
-
-
-
-
-
