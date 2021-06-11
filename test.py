@@ -2,7 +2,7 @@ from PIL import ImageGrab
 from pytesseract import *
 import re
 import psutil
-import os, signal
+
 pytesseract.tesseract_cmd = "C:\Program Files\Tesseract-OCR/tesseract.exe"
 
 def readDigitFromScreen():
