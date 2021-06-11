@@ -16,20 +16,26 @@ def readDigitFromScreen():
     try:
         text = image_to_string(croppedImage, lang='kor')
         numlist = re.findall("\d",text)
-
-        for num in numlist:
-            digit+=num
+        if not numlist:
+            return 404
+        else:
+            for num in numlist:
+                digit+=num
+            return int(digit)
     except TesseractNotFoundError:
         print("you need to install Tesseract-OCR on your system")
-    return int(digit)
+
 
 
 
 def scanPeopleNum():
     if(readDigitFromScreen()< 30):
         killzoom()
-    elif readDigitFromScreen() >=30:
+        # kill_zoom_process()
+    elif readDigitFromScreen() >=30 and readDigitFromScreen() <=50:
         print("아직 인원이 %d명입니다"%readDigitFromScreen())
+    elif readDigitFromScreen() == 404:
+        print("숫자를 인식할 수 없습니다")
 
 def killzoom():
     for proc in psutil.process_iter():
@@ -50,3 +56,15 @@ def killzoom():
 
 while True:
     scanPeopleNum()
+
+
+
+
+
+
+
+
+
+
+
+
