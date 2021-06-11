@@ -1,2 +1,7 @@
 # killtheZoom-2.0
-**화면 해상도마다 캡쳐 범위가 다르고(현재 4k만 지원) , tesseract가 깔려있어야 됩니다**
+**https://joyhong.tistory.com/79 이 글을 보면서 tesseract를 C:\Program Files\Tesseract-OCR 경로로 설치하고 환경변수를 설정해주세요(한국어 언어 추가 필요)**
+
+1. 상단의 초록색 'Code' 버튼 클릭 후 'Dowoload ZIP' 클릭 후 소스코드 다운로드
+2. powershell 실행 후 해당 소스코드의 폴더 directory로 이동(cd "소스코드 폴더 위치")
+3. ```pip install -r requirements.txt``` 
+4. ```python killtheZoom.py```
