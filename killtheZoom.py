@@ -6,21 +6,15 @@ import psutil
 pytesseract.tesseract_cmd = "C:\Program Files\Tesseract-OCR/tesseract.exe"
 
 userwidth,userheight = map(int,input("모니터 해상도를 입력하여주세요 : ").split())
-print(userwidth,userheight)
 
 width_left = int(userwidth / 1.2)
 width_up = int(userheight / 54)
 width_right = int(userwidth / 1.03783)
 width_down = int(userheight / 12.7)
 
-print(width_left,width_up,width_right,width_down)
-
 def readDigitFromScreen():
     img = ImageGrab.grab()
-    # print(img.size)
     croppedImage = img.crop((width_left, width_up, width_right, width_down))
-    # print("잘려진 사진 크기 :", croppedImage.size)
-
     digit=''
     try:
         text = image_to_string(croppedImage, lang='kor')
@@ -33,9 +27,6 @@ def readDigitFromScreen():
             return int(digit)
     except TesseractNotFoundError:
         print("you need to install Tesseract-OCR on your system")
-
-
-
 
 def scanPeopleNum():
     if(readDigitFromScreen()< 15):
