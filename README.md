@@ -5,3 +5,8 @@
 2. powershell 실행 후 해당 소스코드의 폴더 directory로 이동(cd "소스코드 폴더 위치")
 3. ```pip install -r requirements.txt``` 
 4. ```python killtheZoom.py```
+5. 이후 터미널의 cli를 지시사항 이행
+
+## Zoom setting
+1. Zoom 화면공유 -> 화면 공유 시 창 크기 : 현재 크기 유지
+2. Zoom 화면 최대화
