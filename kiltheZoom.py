@@ -5,12 +5,21 @@ import psutil
 
 pytesseract.tesseract_cmd = "C:\Program Files\Tesseract-OCR/tesseract.exe"
 
+userwidth,userheight = map(int,input("모니터 해상도를 입력하여주세요 : ").split())
+print(userwidth,userheight)
+
+width_left = int(userwidth / 1.2)
+width_up = int(userheight / 54)
+width_right = int(userwidth / 1.03783)
+width_down = int(userheight / 12.7)
+
+print(width_left,width_up,width_right,width_down)
+
 def readDigitFromScreen():
     img = ImageGrab.grab()
     # print(img.size)
-    croppedImage = img.crop((3200, 40, 3700, 170))
+    croppedImage = img.crop((width_left, width_up, width_right, width_down))
     # print("잘려진 사진 크기 :", croppedImage.size)
-    # croppedImage.save("croppedImage.png")
 
     digit=''
     try:
@@ -31,7 +40,6 @@ def readDigitFromScreen():
 def scanPeopleNum():
     if(readDigitFromScreen()< 30):
         killzoom()
-        # kill_zoom_process()
     elif readDigitFromScreen() >=30 and readDigitFromScreen() <=50:
         print("아직 인원이 %d명입니다"%readDigitFromScreen())
     elif readDigitFromScreen() == 404:
