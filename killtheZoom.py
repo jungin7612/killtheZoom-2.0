@@ -38,9 +38,9 @@ def readDigitFromScreen():
 
 
 def scanPeopleNum():
-    if(readDigitFromScreen()< 30):
+    if(readDigitFromScreen()< 15):
         killzoom()
-    elif readDigitFromScreen() >=30 and readDigitFromScreen() <=50:
+    elif readDigitFromScreen() >=15 and readDigitFromScreen() <=50:
         print("아직 인원이 %d명입니다"%readDigitFromScreen())
     elif readDigitFromScreen() == 404:
         print("숫자를 인식할 수 없습니다")
