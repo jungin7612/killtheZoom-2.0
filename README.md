@@ -7,7 +7,7 @@
 3. `pip install -r requirements.txt`
 4. `python killtheZoom.py`
 5. 이후 터미널의 cli를 지시사항 이행
-   ![iamge](resource/killtheZoom.png)
+   ![iamge](resources/killtheZoom.png)
 
 ## Zoom setting
 
