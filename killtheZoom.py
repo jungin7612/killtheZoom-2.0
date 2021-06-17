@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from PIL import ImageGrab
 from pytesseract import *
 import re
